@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-
+<!---What I didn't write -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Java QuickReference</title>
+    <title>Java Quick Reference</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,7 @@
                     <a href="/JavaQR/" style="color:black;font-family:Arial;padding-left:10px" align="left">
                         <img src="http://managementscience.biz/wp-content/uploads/2014/09/java-logo-png.png" width="40px"> Quick Reference
                     </a>
+                    <!---What I modified-->
                 </li>
                 <li>
                     <a href="index.html">Home</a>
@@ -68,9 +69,34 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
+                        <!--What I wrote-->
                         <h1>Objects</h1>
                         <p>Java is known as an <strong>Object-Oriented</strong> programming Language. This means many of its functions are based off containers called <strong>objects</strong>, or (in the case of Java), <strong>classes</strong>. This offers many advantages to developers, but the most important is less repetition when coding. Creating objects allows a programmer to store categorized data and reuse sections of code without having to retype it somewhere else in the program, and is therefore a much more efficient and streamlined way to program.</p>
                         <h2>Classes</h2>
+                        <p>A <code>class</code> keyword in Java denotes an object. Objects are used to group methods and variables that have a logical place with one another and will interact in some way with one another. If we have a <code>Car</code>, we want it to be able to <code>drive</code> and <code>stop</code>. If we take that last sentence and look at it a little bit harder, we can already see our class taking shape.</p>
+                        <h3>Declaring a Class</h3>
+                        <p>Before a class can be used, it must be declared inside its own <code>.java</code> file. In this exmple, we will create a <code>Car</code> class that can <code>drive</code> and <code>stop</code>. We will also include the necessary variables needed to make (construct) a car.</p>
+                        <h4>Class Header</h4>
+                        <p><code>public class Car {</code></p>
+                        <p>A class header is used to declare your class to the program. It is a very simple declaration including <em>only</em> an accessibility identifier, the word <code>class</code>, and the name of the class you would like to create. <strong>A Class's name usually starts with a capital letter.</strong> (A syntax error will not be thrown if you don't capitalize it, but it is the convention of programmers).</p>
+                        <h4><em>Instance</em> Variables</h4>
+                        <p><code>private int topSpeed; <br>
+                            private boolean sixCylinder = false;</code></p>
+                        <h4>Constructor</h4>
+                        <p><code>public Car(int topSpeed, boolean cyl){ <br>}</code></p>
+                        <p>A Class's <strong>constructor</strong> is one of its most important parts. We will go over constructors <a href="#constructors">below</a>.</p>
+                        <h4>Methods</h4>
+                        <p><code>public void drive(){ <br>} <br><br>public void stop(){<br>}</code></p>
+                        <h3 id="constructors">Constructors</h3>
+                        <p>All classes should contain a <strong>constructor</strong>. The constructor, as it might sound, constructs a new <em>instance</em> of that object. A constructor is most-often used to create a new instance of the object outside of the class, but methods within the object's class can also call its constructor and create new instances (usually to <code>return</code> the objects to another class).</p>
+                        <h4>Structure of the Constructor</h4>
+                        <p><code>public &lt;Name of class&gt;() {</code></p>
+                        <p>A constructor is normally used to <strong>initialize</strong> uninitialized variables. For example, in our <code>car</code> class, we have two instance variables, <code>topSpeed</code> and <code>sixCylinder</code>. In our class, <code>sixCylinder</code> is already initialized as <code>false</code>, but <code>topSpeed</code> has no initial value. In this case, our constructor would be used to initialize it.</p>
+                        <p>The completed Constructor would be as follows:</p>
+                        <code>public Car(int top) { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.topSpeed = top;<br>
+                        }</code>
+                        <p>You can see the assignment statement inside the constructor. The constructor works just like any other method in Java, but the computer will recognize a call to a constructor as an instruction to make a <code>new</code> version of that object, and allocate it some memory in RAM.</p>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:20px; right:20px;">Toggle Menu</a>
                     </div>
                 </div>
