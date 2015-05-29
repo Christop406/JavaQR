@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Java QuickReference</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="background-color:#430043">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand" style="background-color:#d4d4d4;">
+                    <a href="/JavaQR/" style="color:black;font-family:Arial;padding-left:10px" align="left">
+                        <img src="http://managementscience.biz/wp-content/uploads/2014/09/java-logo-png.png" width="40px"> Quick Reference
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="struct.html">Structure</a>
+                </li>
+                <li>
+                    <a href="variables.html">Variables</a>
+                </li>
+                <li>
+                    <a href="methods.html" style="background-color:white;color:black;">Methods</a>
+                </li>
+                <li>
+                    <a href="objects.html">Objects</a>
+                </li>
+                <li>
+                    <a href="otherlinks.html">Other</a>
+                </li>
+                <li>
+                    <a href="laptop.html">Win the Laptop</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info">If you haven't looked over the <a href="variables.html">variables</a> page, this one will be very confusing. Head on over there for a look at how Variables work!</div>
+                        <h1>Methods</h1>
+                        <p><strong>Methods</strong> serve as containers for code that will be repeated within the rest of the program. Also known as <strong>functions</strong>, they play an integral role in Object-Oriented Programming, and all languages use them.</p>
+                        <h2>Detailed structure of a method header</h2>
+                        <p>When beginning to craft a method, it is important that you know <em>what</em> the method will be doing with the data and plan its structure accordingly. As an example, we will create a method that takes in a <strong>number</strong> and adds <strong>20</strong> to that number, then <code>return</code>s it back to the main program.</p>
+                        <p>But How do we Start? Well, first, let's pseudocode what we want the method to do and what we will need to make that happen.</p>
+                        <code>//Take the number the sender gives to the method... I think it will be an int. <br>
+                        //Add 20 to that number <br>
+                        //Return our new number. We'll call it newNumber</code>
+                        <p><br>Now that you've sucessfully pseudocoded the new method, it's time to implement it.</p>
+                        <p><code>//Take the number the sender gives to the method</code> turns into <code>public int methodAddsTwenty(int num){</code></p>
+                        <p>Likewise, <code>//Add 20</code> turns into <code>newNum = num + 20;</code></p>
+                        <p>Finally, the return statement looks like this: <code>return newNum;</code></p>
+                        <p>Then we add our closing semicolon: <code>}</code> and we're done! If we were to <a href="#calls">call</a> this method using a variable assignation, it would look something like this:<br>
+                            <code>int number = methodAddsTwenty(5);</code><br>After the call, <code>number</code> would equal <strong>25</strong>, because the value returned by <code>methodAddsTwenty(5)</code> gets automatically assigned to the variable.</p>
+                        <p>There are four parts to a method header. Two of which are <em>always</em> required, and the other two can be ommitted based on the                                   function of the method or if only default values are required.</p>
+                        <h4>A general method header might looks something like this:</h4>
+                        <code>&lt;accessibility&gt; &lt;returntype&gt; &lt;name&gt; (&lt;parameters&gt;) { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//code<br> }</code>
+                        <div style="padding:10px;"></div>
+                        <p><code>&lt;accessibilty&gt;</code> denotes which parts of the program can access and use this method. When set to <code>private</code>, only other methods in <strong>this</strong> class may access the method. When set to <code>public</code>, other classes and other parts of the program may use the method when they <strong>instantiate</strong> the class at runtime.</p>
+                        <p><code>&lt;returntype&gt;</code> denotes the <strong>type</strong> of the value to be returned. This can be any type acessible to the method.</p>
+                        <p><code>&lt;name&gt;</code> presents an identifier that the rest of the class and program will use when <strong>calling</strong> the method.</p>
+                        <p><code>&lt;parameters&gt;</code> are comma-separated lists of <a href="variables.html#vars">variables</a> or <a href="variables.html#const">constants</a> that can be used to modify the run of the method, and are <strong>required</strong> when calling the method. If the above method's parameters were <code>(int num, String s)</code>, the method would need to be called as <code>&lt;name&gt;(5, "puppies")</code> to avoid a runtime and/or syntax error.</p>
+                        <h3 id="calls">Method Calls</h3>
+                        <p>When a program wants to use a method. It performs what is called a <strong>method call</strong>. A method call tells the computer which method it would like to run, including its input parameters, and usually assigns this value to a <a href="variables.html">variable</a>.</p>
+                        <p>A method call is structured as follows:</p>
+                        <code>myMethodName(inputParameter);</code>
+                        <p>When <a href="variables.html#assign">assigned</a> to a variable, if the method has a <strong>return type</strong>, whatever the method returns will be assigned to the variable in the other class.</p>
+                        <div class="panel panel-warning" id="testpanel1">
+                            <div class="panel-heading">
+                                <div class="panel-title">Test Time!</div>
+                            
+                            </div>
+                        <p style="padding-top:10px;padding-left:10px;">Suppose we are creating a <code>public</code> method <code>dividesByTwo</code> that takes in one <code>int</code> named <code>num</code> and divides it by 2, returning an <code>int</code>. Below, type the method header, including the method's accessibility, return type, and input parameters.</p>
+                        <div id="test" style="padding-left:10px;">
+                        <input type="text" id="userInput" size="40"></input>
+                        <span><button onclick="test()" class="btn btn-sm btn-primary" id="submitbutton" style="margin-bottom:5px;">Submit</button></span><span id="info" style="padding-left:10px;"></span>
+                    
+                        <script>
+                            function test()
+                            {
+                                var userInput = document.getElementById("userInput").value;
+                                if (userInput === "public int dividesByTwo(int num)" || userInput === "public int dividesByTwo(int num);" || userInput === "public int dividesByTwo(int num){" || userInput === "public int dividesByTwo(int num){}" || userInput === "public int dividesByTwo(int num) {") {
+                                    document.getElementById("submitbutton").setAttribute("class","btn btn-sm btn-success");
+                                    document.getElementById("submitbutton").innerHTML = "Correct!"
+                                    document.getElementById("testpanel1").setAttribute("class", "panel panel-success");
+                                    document.getElementById("info").innerHTML = ""
+                                } else {
+                                    document.getElementById("submitbutton").setAttribute("class","btn btn-sm btn-danger");
+                                    document.getElementById("submitbutton").innerHTML = "False!";
+                                    document.getElementById("info").innerHTML = "Click the button again to re-check your answer";
+                                    document.getElementById("info").setAttribute("color","red");
+                                    document.getElementById("testpanel1").setAttribute("class", "panel panel-danger");
+                                }
+                            }
+                            </script>
+                    </div>
+                        </div>
+                        <h3 id="static">Static methods</h3>
+                        <p>Sometimes you will want to use methods in your program without having to make an instance of the object containing the method. For this reason, Java includes what are called <code>static</code> methods. These methods are not called from an instance of their class. Instead, the class acts as more of a "container" for the method.</p>
+                        <p>Suppose a class has been created with the name <code>School</code>. Inside the class, we want to include a description of a general English class. In this case, we might use a <code>static</code> method, because we do not need to create a new <code>School</code> to know what an English class is. Our method will return a <code>String</code> that describes an English class.</p>
+                        <p>To Create this method, we would add to our class:</p>
+                        <code>public static String englishInfo(){ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "A class where the English language is Learned"; <br>
+                            }
+                        </code>
+                        <p>When calling this method, we would now write <br> <code>School.englishInfo()</code> <br> rather than <br><code>School s = new School();</code> <br> <code>s.englishInfo();</code></p>
+                        <div style="padding:10px;"></div>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:20px; right:20px;">Toggle Menu</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
