@@ -51,6 +51,18 @@
                     <a href="methods.html" style="background-color:white;color:black;">Methods</a>
                 </li>
                 <li>
+                    <a href="#methodheader" style="background-color:rgba(128, 128, 128, 0.4);" id="headermenu">Method Headers</a>
+                </li>
+                <li>
+                    <a  href="#parameters" style="background-color:rgba(128, 128, 128, 0.4);" id="parammenu">Parameters</a>
+                </li>
+                <li>
+                    <a  href="#calls" style="background-color:rgba(128, 128, 128, 0.4);" id="callsmenu">Method Calls</a>
+                </li>
+                <li>
+                    <a  href="#static" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Static Methods</a>
+                </li>
+                <li>
                     <a href="objects.html">Objects</a>
                 </li>
                 <li>
@@ -71,7 +83,7 @@
                         <div class="alert alert-info">If you haven't looked over the <a href="variables.html">variables</a> page, this one will be very confusing. Head on over there for a look at how Variables work!</div>
                         <h1>Methods</h1>
                         <p><strong>Methods</strong> serve as containers for code that will be repeated within the rest of the program. Also known as <strong>functions</strong>, they play an integral role in Object-Oriented Programming, and all languages use them.</p>
-                        <h2>Detailed structure of a method header</h2>
+                        <h2 id="methodheader">Detailed structure of a method header</h2>
                         <p>When beginning to craft a method, it is important that you know <em>what</em> the method will be doing with the data and plan its structure accordingly. As an example, we will create a method that takes in a <strong>number</strong> and adds <strong>20</strong> to that number, then <code>return</code>s it back to the main program.</p>
                         <p>But How do we Start? Well, first, let's pseudocode what we want the method to do and what we will need to make that happen.</p>
                         <code>//Take the number the sender gives to the method... I think it will be an int. <br>
@@ -91,12 +103,14 @@
                         <p><code>&lt;returntype&gt;</code> denotes the <strong>type</strong> of the value to be returned. This can be any type acessible to the method.</p>
                         <p><code>&lt;name&gt;</code> presents an identifier that the rest of the class and program will use when <strong>calling</strong> the method.</p>
                         <p><code>&lt;parameters&gt;</code> are comma-separated lists of <a href="variables.html#vars">variables</a> or <a href="variables.html#const">constants</a> that can be used to modify the run of the method, and are <strong>required</strong> when calling the method. If the above method's parameters were <code>(int num, String s)</code>, the method would need to be called as <code>&lt;name&gt;(5, "puppies")</code> to avoid a runtime and/or syntax error.</p>
-                        <h4>Parameters</h4>
+                        <h4 id="parameters">Parameters</h4>
                         <p><strong>Parameters</strong> are important when dealing with methods. Simply put, they can be seen as <em>modifiers</em> to how a method executes by <strong>passing in</strong> different values.<br>For Example:</p>
                         <span><code>doesThis(String s)</code>, <code>doesThat(int x)</code>, <code>doesTheOtherThing(int x, String s)</code>.</span>
                         <p style="padding-top:10px;">All of these methods may or may not do the same thing, but they are completely different (to a computer, anyway) in their input parameters. When declaring a method, the input parameters must contain a <code>type</code> and a <code>name</code>. You see this above with <code>String</code> and <code>int</code>, <code>s</code> and <code>x</code>, respectively. When calling a method containing input parameters, a type need not be specified, as the computer will infer its type when the method is called. For example, when calling <code>doesThis</code>, one need not type <code>doesThis(String "this")</code>, because the double quotes (<code>"</code>) denote a String to the Java compiler. An <code>int</code> will be inferred by simply typing in any number (<code>doesThat(10)</code>). Just because type declarations are not required, however, does not mean the computer is lenient on what is passed in as a parameter. A method call with the correct name but incorrect parameters results in a syntax error, and the program will not execute.</p>
                         <h4>Return Types</h4>
-                        <p>A <strong>return type</strong> can be <em>any</em> type of variable accessible to the method, or <code>void</code>.</p>
+                        <p>A method's return type, simply put, is the type of object (or primitive type) it will return. A <strong>return type</strong> can be <em>any</em> type of variable accessible to the method, or <code>void</code>. A <code>void</code> return type simply means <em>nothing</em> is returned. These methods are often used to <code>print</code> messages to the console, or to purely set variables in a class. Since there is no object returned, a <code>void</code> method could not be viably used as a variable <a href="#getter">getter</a>.</p>
+                        <h4>When to use a method</h4>
+                        <p>Methods should be used for a few reasons. First-off, it is generally a good idea to use getters and setters to retrieve and set variables rather than changing the variable itself, to prevent syntax and runtime errors. The second reason to use a method is when you want a class to be able to perform a function of some type. This application could range from simple calculations to complex searching algorithms (like <a href="http://google.com/">Google!</a>) to logic programming in video games. The application of methods is far-reaching, and as such they are the perferred way of running code in object-oriented languages.</p>
                         <h3 id="calls">Method Calls</h3>
                         <p>When a program wants to use a method. It performs what is called a <strong>method call</strong>. A method call tells the computer which method it would like to run, including its input parameters, and usually assigns this value to a <a href="variables.html">variable</a>.</p>
                         <p>A method call is structured as follows:</p>
@@ -129,6 +143,12 @@
                                     document.getElementById("testpanel1").setAttribute("class", "panel panel-danger");
                                 }
                             }
+                            function scrollToParams() {
+                                var objDiv = document.getElementById("parameters");
+                                objDiv.scrollTop = objDiv.scrollHeight;
+                            </script>
+                            <script>
+                                $('#parammenu').click(scrollToParams())
                             </script>
                     </div>
                         </div>

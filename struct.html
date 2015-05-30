@@ -44,6 +44,18 @@
                 <li style="background-color:white;">
                     <a href="struct.html" style="color:black;">Structure</a>
                 </li>
+                <li>
+                    <a  href="#classstruct" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Class Structure</a>
+                </li>
+                <li>
+                    <a  href="#methstruct" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Method Structure</a>
+                </li>
+                <li>
+                    <a  href="#comments" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Comments</a>
+                </li>
+                <li>
+                    <a  href="#operators" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Logical Operators</a>
+                </li>
                 <li style="">
                     <a href="variables.html">Variables</a>
                 </li>
@@ -73,12 +85,12 @@
                         <p>There are some different <strong>Primitve Types</strong> within Java. A <strong>primitive type</strong> is a type of <a href="variables.html"><strong>variable</strong></a> that does not conform to any <code>interface</code> or <code>class</code> and therefore cannot make use of any <strong>methods.</strong></p>
                         <h2>Structure of a Java Program</h2>
                         <h3><a href="classes.html">Classes</a></h3>
-                        <p><strong>Classes</strong>, otherwise known as <strong>objects</strong>, are containers for <a href="methods.html">methods</a> and <a href="variables.html">variables</a> that have a close relationship to one another in a way that makes sense to the program and other programmers. <br><strong>Every method and variable in Java must be encapsuled by a <a href="classes.html">class</a> or <a href="classes.html#interfaces">interface</a></strong>.</p>
+                        <p><strong>Classes</strong>, otherwise known as <strong>objects</strong>, are containers for <a href="methods.html">methods</a> and <a href="variables.html">variables</a> that have a close relationship to one another in a way that makes sense to the program and other programmers. <br><strong>Every method and variable in Java must be encapsuled by a <a href="objects.html">class</a> or <a href="objects.html#interfaces">interface</a></strong>.</p>
                         <h3><a href="methods.html">Methods</a></h3>
                         <p><strong>Methods</strong> allow a programmer to embed repeated or lengthy amounts of code inside a function that exectues when it is <a href="methods.html#calls">called</a>. Methods can do everything from a simple math calculation to large algorithms to displaying colors on a computer screen. The only limit to a method's actions is the programmer's imagination.</p>
-                        <h3><a href="variables.html">Variables</a></h3>
+                        <h3 id="variables"><a href="variables.html">Variables</a></h3>
                         <p><strong>Variables</strong> store data in the program. When a variable is <a href="variables.html#declaring">declared</a>, it gets a little spot in the computer's <a href="http://en.wikipedia.org/wiki/Random-access_memory">RAM</a> and keeps that variable until it is no longer needed or reset.</p>
-                        <h2>Basic Structure of a Java Class</h2>
+                        <h2 id="classstruct">Basic Structure of a Java Class</h2>
                         <p>
                             A Basic Java <code>class</code> consists of <strong>three</strong> parts: <br>
                         <li>The <strong>Accessibility Identifier</strong> (<code>public</code> or <code>private</code>)
@@ -90,7 +102,7 @@
                         </p>
                         <code>public class Example { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//methods and variables<br>}<br><br>
                         </code>
-                        <h2>Structure of Java Methods</h2>
+                        <h2 id="methstruct">Structure of Java Methods</h2>
                         <p>Java's <code>methods</code> all share a similar design pattern to one another. To declare a method, one must include:</p>
                         <li>An <strong>Accessibility Identifier</strong></li>
                         <li>A <strong>return type</strong>. A return type can be any <code>object</code> or primitive type.</li>
@@ -99,7 +111,7 @@
                                 <code>public int exampleMethod(int input){ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return input;<br> }</code>
                         <p>The above code takes in an <code>int</code> (named <code>input</code>) as an input parameter. It returns the number that was passed in by the <strong><a href="methods.html#calls">method call.</a></strong></p>
                         <div></div>
-                        <h2>Comments</h2>
+                        <h2 id="comments">Comments</h2>
                         <p><strong>Comments</strong> help the developer keep track of what he/she is doing when coding. They can say anything in a program and are completely skipped by Java's compiler. To denote a comment in your code, simply add the characters <code>//</code> before you type, or for a <strong>multiline comment</strong>, use <code>/*</code>to start it and <code>*/</code> to end it, respectively.</p>
                         <p><strong>For Example:</strong></p>
                         <code>int x = myFunction(5); <br>

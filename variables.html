@@ -48,6 +48,15 @@
                     <a href="variables.html" style="background-color:white;color:black;">Variables</a>
                 </li>
                 <li>
+                    <a  href="#declaring" style="background-color:rgba(128, 128, 128, 0.4);" id="decmenu">Declaration</a>
+                </li>
+                <li>
+                    <a  href="#instantiating" style="background-color:rgba(128, 128, 128, 0.4);" id="initmenu">Initialization</a>
+                </li>
+                <li>
+                    <a  href="#types" style="background-color:rgba(128, 128, 128, 0.4);" id="initmenu">Variable Types</a>
+                </li>
+                <li>
                     <a href="methods.html">Methods</a>
                 </li>
                 <li>
@@ -77,8 +86,14 @@
                         <code>int x;</code>
                         <p>That's it! <br>In Java, this small statement tells the computer that <code>x</code> will <em>always</em> contain an Integer, or <code>int</code>. As a general rule, <strong>Once a variable's type has been declared, it may not be changed.</strong></p>
                         <h3 id="instantiating">Initializing A Variable</h3>
-                        <p>Obviously, a variable without any value really has no purpose, and simply declaring a variable does not give it a usable value (though there are <a href="otherlinks.html#defvals">default values</a> for some datatypes). To fix this, we must <strong>initialize</strong> a variable. <strong>Initialization</strong> gives the variable its value and prepares it to be used in the program. This is most often done with the use of a <a href="objects.html#constructors"><strong>constructor</strong> or <strong>initializer</strong>.</a></p>
-                        <h3>Types of variables</h3>
+                        <p>Obviously, a variable without any value really has no purpose, and simply declaring a variable does not give it a usable value (though there are <a href="otherlinks.html#defvals">default values</a> for some datatypes). To fix this, we must <strong>initialize</strong> a variable. <strong>Initialization</strong> (or assignation) gives the variable its value and prepares it to be used in the program. This is most often done with the use of a <a href="objects.html#constructors"><strong>constructor</strong> or <strong>initializer</strong>.</a></p>
+                        <p>To initialize a variable, one must make use of the <strong>assignment</strong> operator (<code>=</code>). The assignment operator tells the computer to assign a value of any type to a variable of the same type. If we wanted to initialize an <code>int</code> and a <code>String</code>, we would simply write statements like so:</p>
+                        <code>int x = 5;</code>
+                        <div style="padding:5px"></div>
+                            <code>String s = "cookies";</code>
+                        <div style="padding:5px"></div>
+                        <p>If you look carefully, the above statements are actually <strong>both</strong> declaration and initialization statements combined into one. <code> int x</code> being the declaration and <code>= 5</code> being the assignment or initialization. The same is true with <code>String s = "cookies"</code></p>
+                        <h3 id="types">Types of variables</h3>
                         <h4 id="primitivetypes">Primitive Types</h4>
                         <p>There are infinitely many types of Variables, but the few that you should be most familiar with are the <strong>primitive types</strong>. There are a few primitive types, but the ones that will arise most often include:</p>
                         <li><code>int</code></li>
@@ -96,7 +111,7 @@
                         <p>We would call this new variable a <code>Game</code> object, because it is now its own seperate instance of the <code>Game</code> class. Whatever modifications are made to <code>myGame</code> will not affect any <em>other</em> instances of the <code>Game</code> class. If <code>Game</code> had a non-static method <code>getCurrentPlayers()</code>, we would be able to call this method by coding <code>myGame.getCurrentPlayers();</code> In fact, if this method were <a href="methods.html#static">static</a>, this call would not work, throwing a Syntax error.</p>
                         <h4 id="const">Constants</h4>
                         <p>A constant is only useful when presenting a value that will never change throughout the life of your program. Since constants never change, they are a great way to ensure that no value can be accidentally modified, later causing logic or runtime errors. Possible uses of constants include length conversions and mathematical constants like <em>e</em> or pi.</p>
-                        <p>Declaring constants is easy. Before the type, simply type the keyword <code>final</code>. Java will see this and know that you have declared a constant rather than a variable, and will throw errors if a change is attempted later in the program.</p>
+                        <p>Declaring constants is easy. Before the type, simply type the keyword <code>final</code>. The Computer will see this and know that you have declared a constant rather than a variable, and will throw errors if a change is attempted later in the program.</p>
                         <div style="padding:10px;"></div>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:20px; right:20px;">Toggle Menu</a>
                     </div>
