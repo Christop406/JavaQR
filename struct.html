@@ -54,8 +54,12 @@
                     <a  href="#comments" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Comments</a>
                 </li>
                 <li>
+                    <a  href="#controlflow" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Control Flow</a>
+                </li>
+                <li>
                     <a  href="#operators" style="background-color:rgba(128, 128, 128, 0.4);" id="staticmenu">Logical Operators</a>
                 </li>
+
                 <li style="">
                     <a href="variables.html">Variables</a>
                 </li>
@@ -120,6 +124,71 @@
                             /* This is a multiline<br>
                             comment */ <br>
                             ...</code>
+                        <h2 id="controlflow">Control Flow</h2>
+                        <p>Control Flow Statements are the built-in Java functions that check if an expression is <code>true</code> or <code>false</code>. These statements include <code>if</code> and <code>switch</code> statements, as well as loops.</p>
+                        <h3 id="if"><code>if</code> statements</h3>
+                        <p><strong><code>if</code> statements </strong> serve only one purpose: To check if an expression is true or false. If the expression returns true, the code inside the <code>if</code> statement will execute. If not, the program will simply pass over the code, not executing it.</p>
+                        <h4>Structure of an <code>if</code> statement</h4>
+                        <code>if(someExpression){<br>
+                            ...code...<br>
+                        }</code>
+                        <p>If <code>someExpression</code> evaluated as <strong>true</strong>, the program would execute the code within. If not, the program would not.</p>
+                        <p>Inside an <code>if</code> statement can be an expression using <a href="#operators">logical operators</a> OR a <code>boolean</code> variable representing true or false.</p>
+                        <p>For example, if I were to check if two <code>int</code> variables were equal, I could write it in two ways:</p>
+                        <code>int x = 5;<div style="padding:3px"></div>
+                            int y = 7;<div style="padding:3px"></div>
+                            if(x == y){<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...code<br>
+                        }</code><div style="padding:3px"></div>
+                        <p><strong>OR</strong></p>
+                        <code>boolean xAndY = (x == y)<div style="padding:3px"></div>
+                            if(xAndY){<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...code<br>} </code>
+                        <div style="padding:3px"></div>
+                        <p><code>if</code> statements are applicable to all aspects of programming and are one of the most important tools a programmer can have when making programs. Without <code>if</code> statements, programs simply would not work, or at least not be very complex.</p>
+                        <h3 id="whileloops"><code>while</code> loops</h3>
+                        <p><code>while</code> loops are most-often used to repeatedly execute blocks of code an uncertain amount of times during the program's run cycle. <code>while</code> and <code>for</code> loops are very similar, and are often used purely at the discretion of the programmer, since they can both do about the same thing in nearly the same way.</p>
+                        <p>Any of Java's <strong>loops</strong> contains three necessary parts. A <strong>start index</strong>, an <strong>index variable</strong>, and an <strong>end index</strong>. In <code>while</code> loops, the <strong>start</strong> and <strong>end</strong> indexes will usually take the form of variables, rather than integer or declared constants, to comply with a <code>while</code> loop's "open-ended" nature.</p>
+                        <code>int x = 0; &nbsp;&nbsp;&nbsp;&nbsp;//Setting our index variable 'x' to our start index 0<br>
+                            while(x &lt; 10){ //Loop for as long as x is less than 10<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...code; &nbsp;//The Programmer's Code<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Adding 1 to the index variable<br>
+                            }</code>
+                        <p>As you can see above, the start index and index variable must be declared outside the while loop, but <strong>incremented</strong> <em>inside</em> the loop. The incrementation helps to avoid the problem of an infinite loop, where a loop never stops executing. This will crash a program.</p>
+                        <h3 id="forloops"><code>for</code> loops</h3>
+                        <p>A <code>for</code> loop is quite like a simplified <code>while</code> loop. This means that the declaration for one may be more compact than that of a while loop, but is more concrete and not as easy to change throughout the run of the loop.</p>
+                        <code>for(int i = 0; i &lt; 10; i++){<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...code<br>
+                        }</code>
+                        <p>A <code>for</code> loop's declaration is formatted as follows: <code>for(&lt;start index&gt;;&lt;end index&gt;;&lt;incrementation&gt;){</code></p>
+                        <p>Most often, the <code>&lt;start index&gt;</code> contains a variable declaration and initialization, like in the above example. This makes it easier to setup a variable, its start and end indexes, and increment it all in one line. The last statement, <code>i++</code>, simply means: "add <strong>one</strong> to the index variable <code>i</code> every time the code within ends." To add <strong>more</strong> than one to the index variable, one might use <code>i = i + &lt;some number&gt;</code> or <code>i += &lt;some number&gt;</code>. Any variable may be used in place of <code>i</code>.</p>
+                        <p></p>
+                        <h3 id="operators">Logical Operators</h3>
+                        <p><strong>Logical operators</strong> are the main method by which a programmer can control what parts of code are executed and <em>when</em> they are executed. These operators are usually found within <code>if</code>, <code>while</code>, <code>for</code>, and <code>switch</code> statements.</p>
+                        <h4>EQUALS (<code>==</code>)</h4>
+                        <p>The <strong>EQUALS</strong> operator is used to compare the values between two variables or constants of a <strong>primitive type</strong> (<em>not</em> <code>String</code>). The <strong>EQUALS</strong> operator evaluates to <code>true</code> or <code>false</code>, meaning it can be used along with any of the other logical operators and inside any of the control flow statements.</p>
+                        <code>(5 == 7) &nbsp;&nbsp;// evaluates to false</code>
+                        <br>
+                        <code>(10 == 10) // evaluates to true</code>
+                        <p>The computer views these expressions exactly as it would <code>true</code> or <code>false</code>, and can be assigned to any variable as such: <code>boolean isItTrue = (5 == 5);</code></p>
+                        <h4>AND (<code>&&</code>)</h4>
+                        <p>The Logical <strong>AND</strong> operator is used to compare <strong>two or more</strong> different boolean expressions. The <strong>AND</strong> operator is only <code>true</code> if <strong>both</strong> conditions also evaluate to <code>true</code>. If even <strong>one</strong> of the expressions evaluates to <code>false</code>, the whole expression evaluates to <code>false</code>.</p>
+                        <p>For example, a <strong>truth table</strong> (useful for deciding how expressions will evaluate when added together):</p>
+                        <code>(false && true) = false <br>
+                            (false && false) = false <br>
+                            (true && true) = true</code>
+                        <h4>OR (<code>||</code>)</h4>
+                        <p>The Logical <strong>OR</strong> operator checks for the truth of <strong>one</strong> expression. This means, if even <strong>one</strong> of the evaluated expressions evaluates to <code>true</code>, the whole statement is <code>true</code>.</p>
+                        <code>(true || false) = true</code><br>
+                        <code>(false || false) = false</code>
+                        <h4>NOT (<code>!</code>)</h4>
+                        <p>The Logical <strong>NOT</strong> operator can be used with any of the other logical operators. It is used to get the <strong>opposite</strong> boolean value that the expression evaluates to. The <strong>NOT</strong> <code>!</code> operator must enclose the <strong>whole</strong> boolean expression OR Can be used to NOT a single boolean variable. Uses could look like this:</p>
+                        <code>!(true && true) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Evaluates to false</code><br>
+                        <code>!false &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Evaluates to true</code>
+                        <br><code>(false || (true && !false)) // Evaluates to true</code>
+                        <h5>NOT EQUAL (<code>!=</code>)</h5>
+                        <p>The <strong>NOT EQUAL</strong> operator is simply the <strong>EQUALS</strong> operator, but NOTted. You use it to find the existence of a difference between multiple values.</p>
+                        <code>(6 != 7)</code> is the same as <code>!(6 = 7)</code>, which would both evaluate to <code>true</code>.
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:20px; right:20px;">Toggle Menu</a>
                     </div>
                 </div>
