@@ -67,6 +67,9 @@
                     <a  href="#abstclasses" style="background-color:rgba(128, 128, 128, 0.4);" id="abstmenu">Abstract Classes</a>
                 </li>
                 <li>
+                    <a  href="#usinginheritance" style="background-color:rgba(128, 128, 128, 0.4);" id="abstmenu">Using Inheritance</a>
+                </li>
+                <li>
                     <a href="otherlinks.html">Other</a>
                 </li>
                 <li>
@@ -113,11 +116,31 @@
                         <p>Inheritance is a very important concept to grasp in Object-Oriented Programming. Inheritance is one of the main ways different objects within a program that are similar can use shared code without having to write anything extra.</p>
                         <h2 id="interfaces">Interfaces</h2>
                         <h3>About Interfaces</h3>
-                        <p><strong>Interfaces</strong> are quick and easy ways to ensure that multiple types of classes all have the same exact methods as one another. Inside an interface, </p>
+                        <p><strong>Interfaces</strong> are quick and easy ways to ensure that multiple types of classes all have the same exact methods as one another. Inside an interface can be <strong>only</strong> method headers and constants. <strong>No</strong> method may be implemented (contain its actual code), it may only be declared, including its acessibility, return type, and parameters. Interfaces may be used when you are sure you know what methods you will need, but you are not sure how to implement them. If a class <code>implements</code> your interface, it must use all of the methods and constants within it.</p>
                         <h3>Declaring an Interface</h3>
                         <code>public interface Name {</code>
-                        <p>Declaring an interface is very similar to declaring a class. Instead of the<code>class</code> identifier, however, is the <code>interface</code> identifier, telling the computer that this is not a class.</p>
+                        <p>Declaring an interface is very similar to declaring a class. Instead of the<code>class</code> identifier, however, is the <code>interface</code> identifier, telling the computer that this is not a class. After this, one must simply add method headers like <strong>so:</strong></p>
+                        <code>public int testMethod();</code> <p>Including the semicolon at the end.</p>
+                        <p>This is what is called an <strong>abstract method</strong>, because it is not implemented. All methods inside an interface must be abstract. If a method is accidentally implemented, your IDE will show an error.</p>
                         <h2 id="abstclasses">Abstract Classes</h2>
+                        <p><strong>Abstract classes</strong> are quite like a mix of an interface and a normal class. They are like interfaces in that they are not able to be instantiated, but they are like classes because you can implement methods inside of them.</p>
+                        <h3>Declaring an abstract class</h3>
+                        <p>Declaring an <strong>abstract class</strong> is as simple as adding the word <code>abstract</code> before <code>class</code> in the class declaration.</p>
+                        <code>public abstract class MyClass{
+                        <br>}</code>
+                        <p>Inside an abstract class, you may write any method as you would in a regular class. Things get different, however, when you want to declare an <strong>abstract method</strong>. Unlike interfaces, not all methods in an abstract class are <code>abstract</code>, so you must designate the ones that are to be so. You can do this simply by writing methods as follows:</p>
+                        <code>public abstract void myMethod();</code>
+                        <p>Interspersed between the rest of your methods. Leaving out the <code>abstract</code> keyword will cause a syntax error.</p>
+                        <h2 id="usinginheritance">Using Inheritance in a Program</h2>
+                        <p>Setting up these inheritable classes truly does nothing if none of our objects inherit them. So how do we integrate them in our program?</p>
+                        <h3><code>implementing</code> an Interface</h3>
+                        <p>Implementing an interface is as simple as including <code>implements &lt;interface&gt;</code> after your class header, like so:</p>
+                        <code>public class MyClass implements MyInterface {</code>
+                        <p>Once you implement an interface, you must use all of the declared methods and constants within.</p>
+                        <h3><code>extending</code> a Class or Abstract Class</h3>
+                        <p>The process for inheriting from an abstract class or regular class is the same on the subclass-side.</p>
+                        <code>public class MyClass extends MyOtherClass {</code>
+                        <p>This makes all of the methods, variables and constants available to the subclass. All <code>abstract</code> methods must be implemented in the subclass, but other, implemented methods, may be called from anywhere in the class without re-implementing them in the program.</p>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:20px; right:20px;">Toggle Menu</a>
                     </div>
                 </div>

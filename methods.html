@@ -123,32 +123,27 @@
                             </div>
                         <p style="padding-top:10px;padding-left:10px;">Suppose we are creating a <code>public</code> method <code>dividesByTwo</code> that takes in one <code>int</code> named <code>num</code> and divides it by 2, returning an <code>int</code>. Below, type the method header, including the method's accessibility, return type, and input parameters.</p>
                         <div id="test" style="padding-left:10px;">
-                        <input type="text" id="userInput" size="40"></input>
+                        <input type="text" id="userInput" size="40" style="font-family:Monaco; color:blue;"></input>
                         <span><button onclick="test()" class="btn btn-sm btn-primary" id="submitbutton" style="margin-bottom:5px;">Submit</button></span><span id="info" style="padding-left:10px;"></span>
                     
                         <script>
                             function test()
                             {
+                                'use strict';
                                 var userInput = document.getElementById("userInput").value;
                                 if (userInput === "public int dividesByTwo(int num)" || userInput === "public int dividesByTwo(int num);" || userInput === "public int dividesByTwo(int num){" || userInput === "public int dividesByTwo(int num){}" || userInput === "public int dividesByTwo(int num) {") {
                                     document.getElementById("submitbutton").setAttribute("class","btn btn-sm btn-success");
                                     document.getElementById("submitbutton").innerHTML = "Correct!"
                                     document.getElementById("testpanel1").setAttribute("class", "panel panel-success");
-                                    document.getElementById("info").innerHTML = ""
+                                    document.getElementById("info").innerHTML = "";
                                 } else {
                                     document.getElementById("submitbutton").setAttribute("class","btn btn-sm btn-danger");
                                     document.getElementById("submitbutton").innerHTML = "False!";
                                     document.getElementById("info").innerHTML = "Click the button again to re-check your answer";
-                                    document.getElementById("info").setAttribute("color","red");
+                                    document.getElementById("info").setAttribute("style","color:red;padding-left:10px;");
                                     document.getElementById("testpanel1").setAttribute("class", "panel panel-danger");
                                 }
                             }
-                            function scrollToParams() {
-                                var objDiv = document.getElementById("parameters");
-                                objDiv.scrollTop = objDiv.scrollHeight;
-                            </script>
-                            <script>
-                                $('#parammenu').click(scrollToParams())
                             </script>
                     </div>
                         </div>

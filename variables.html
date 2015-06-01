@@ -85,7 +85,7 @@
                         <p>Before a variable can be used, it must be <em>declared</em>. Declaring variables in Java is very easy. The following is an example declaration of a variable <code>x</code> that contains a whole number:<br></p>
                         <code>int x;</code>
                         <p>That's it! <br>In Java, this small statement tells the computer that <code>x</code> will <em>always</em> contain an Integer, or <code>int</code>. As a general rule, <strong>Once a variable's type has been declared, it may not be changed.</strong></p>
-                        <h3 id="instantiating">Initializing A Variable</h3>
+                        <h3 id="instantiating">Initializing / Assigning A Variable</h3>
                         <p>Obviously, a variable without any value really has no purpose, and simply declaring a variable does not give it a usable value (though there are <a href="otherlinks.html#defvals">default values</a> for some datatypes). To fix this, we must <strong>initialize</strong> a variable. <strong>Initialization</strong> (or assignation) gives the variable its value and prepares it to be used in the program. This is most often done with the use of a <a href="objects.html#constructors"><strong>constructor</strong> or <strong>initializer</strong>.</a></p>
                         <p>To initialize a variable, one must make use of the <strong>assignment</strong> operator (<code>=</code>). The assignment operator tells the computer to assign a value of any type to a variable of the same type. If we wanted to initialize an <code>int</code> and a <code>String</code>, we would simply write statements like so:</p>
                         <code>int x = 5;</code>
@@ -96,11 +96,11 @@
                         <h3 id="types">Types of variables</h3>
                         <h4 id="primitivetypes">Primitive Types</h4>
                         <p>There are infinitely many types of Variables, but the few that you should be most familiar with are the <strong>primitive types</strong>. There are a few primitive types, but the ones that will arise most often include:</p>
-                        <li><code>int</code></li>
-                        <li><code>double</code> or <code>float</code></li>
-                        <li><code>boolean</code></li>
-                        <li><code>char</code></li>
-                        <li><code>String</code> (Not actually a primitive type since it has <a href="methods.html">methods</a> that can be used to perform tasks, but acts as one, so we'll place it here since it is very important)</li>
+                        <li><code>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Whole Numbers (Integers)</code></li>
+                        <li><code>double</code> or <code>float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Positive/Negative Numbers containing a decimal point</code></li>
+                        <li><code>boolean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//True or False</code></li>
+                        <li><code>char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//A single letter or symbol (character)</code></li>
+                        <li><code>String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Whole words or phrases, surrounded by quotes ("") or ('')</code> (Not actually a primitive type since it has <a href="methods.html">methods</a> that can be used to perform tasks, but acts as one, so we'll place it here since it is very important)</li>
                         <div style="padding:4px"></div>
                         <p>Each of these types represents a different form that a variable can take, and that are <em>built-in</em> to the Java language by default.</p>
                         <h4>Objects</h4>
@@ -108,12 +108,39 @@
                         <p>To assign a new instance of the <code>Game</code> class to a variable, we would simply type</p>
                         <code>Game myGame = new Game();</code>
                         <div style="padding:4px"></div>
-                        <p>We would call this new variable a <code>Game</code> object, because it is now its own seperate instance of the <code>Game</code> class. Whatever modifications are made to <code>myGame</code> will not affect any <em>other</em> instances of the <code>Game</code> class. If <code>Game</code> had a non-static method <code>getCurrentPlayers()</code>, we would be able to call this method by coding <code>myGame.getCurrentPlayers();</code> In fact, if this method were <a href="methods.html#static">static</a>, this call would not work, throwing a Syntax error.</p>
+                        <p>We would call this new variable a <code>Game</code> object, because it is now its own seperate instance of the <code>Game</code> class. Whatever modifications are made to <code>myGame</code> will not affect any <em>other</em> instances of the <code>Game</code> class. If <code>Game</code> had a non-static method <code>getCurrentPlayers()</code>, we would be able to call this method by coding <code>myGame.getCurrentPlayers();</code> In fact, if this method were <a href="methods.html#static">static</a>, this call would not work, throwing a Syntax error. The <code>Game();</code> part is simply shorthand for calling the <code>Game</code> class's constructor method, which in this case has no parameters.</p>
                         <h4 id="const">Constants</h4>
                         <p>A constant is only useful when presenting a value that will never change throughout the life of your program. Since constants never change, they are a great way to ensure that no value can be accidentally modified, later causing logic or runtime errors. Possible uses of constants include length conversions and mathematical constants like <em>e</em> or pi.</p>
                         <p>Declaring constants is easy. Before the type, simply type the keyword <code>final</code>. The Computer will see this and know that you have declared a constant rather than a variable, and will throw errors if a change is attempted later in the program.</p>
+                        <div class="panel panel-warning" id="testpanel">
+                        <div class="panel-heading"><div class="panel-title">Test Time!</div></div>
+                        <div style="padding-left:10px">
+                        <p>It's time to practice with some variables! Suppose we have a variable <code>trueOrFalse</code> in which we want to store a value of either <code>true</code> or <code>false</code>. When our program begins, we would like the default value for <code>trueOrFalse</code> to be <code>false</code>. Below, declare and initialize <code>trueOrFalse</code>. Include the semicolon at the end.</p>
+                            <input type="text" id="userInput" size="40" style="font-family:Monaco;color:blue;"></input>
+                            <span><button onclick="test()" class="btn btn-sm btn-primary" id="submitbutton" style="margin-bottom:5px">Submit</button><span id="info" style="padding-left:10px;"></span></span>
+                               </div>
+                        </div>
                         <div style="padding:10px;"></div>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position:fixed; bottom:20px; right:20px;">Toggle Menu</a>
+                                                <script>
+                            function test()
+                            {
+                                'use strict';
+                                var userInput = document.getElementById("userInput").value;
+                                if (userInput === "public boolean trueOrFalse = false;" || userInput === "boolean trueOrFalse = false;" || userInput === "boolean trueOrFalse=false;") {
+                                    document.getElementById("submitbutton").setAttribute("class","btn btn-sm btn-success");
+                                    document.getElementById("submitbutton").innerHTML = "Correct!"
+                                    document.getElementById("testpanel").setAttribute("class", "panel panel-success");
+                                    document.getElementById("info").innerHTML = "";
+                                } else {
+                                    document.getElementById("submitbutton").setAttribute("class","btn btn-sm btn-danger");
+                                    document.getElementById("submitbutton").innerHTML = "False!";
+                                    document.getElementById("info").innerHTML = "Click the button again to re-check your answer. (Spaces requred between the equals sign and words)";
+                                    document.getElementById("info").setAttribute("style","color:red;padding-left:10px;");
+                                    document.getElementById("testpanel").setAttribute("class", "panel panel-danger");
+                                }
+                            }
+                            </script>
                     </div>
                 </div>
             </div>
